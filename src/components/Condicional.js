@@ -5,7 +5,7 @@ function Condicional (){
     const [userEmail, setUserEmail] = useState()
     
     function enviarEmail(e){
-        e.preventDefault()//para o email nao ser enviado
+        e.preventDefault()//para o email nao ser enviado pro php
         setUserEmail(email)   
         console.log(userEmail)//mostrando o email
     }
@@ -19,6 +19,7 @@ function Condicional (){
             <form>
                 <input type="email" placeholder='Digite seu e-mail' onChange={(e) => setEmail(e.target.value)}/>
                 <button type='submit' onClick={enviarEmail}>Enviar e-mail</button>
+                
                 {userEmail && (// condição
                 //se o userEmail for preenchido, vai mostra na tela essa div
                     <div>
