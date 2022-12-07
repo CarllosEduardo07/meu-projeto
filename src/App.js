@@ -3,25 +3,22 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home';
 import Empresa from './pages/Empresa';
 import Contato from './pages/Contato';
+import Navbar from './components/Navbar';
+import Footer from './components/layout/Footer';
 
-function App() {
+export default function App() {
   return (
     <Router>
-      <ul>
-        <li><Link to="/">Home</Link></li>
-        <li><Link to="/empresa">Empresa</Link></li>
-        <li><Link to="/contato">Contato</Link></li>
-      </ul>
+      <Navbar/>
         <Routes>
-          <Route  path='/' component={Home}>
-          </Route>
-          <Route  path='/empresa' component={Empresa}>
-          </Route>
-          <Route exact path='/Contato' component={Contato}>
-          </Route>
+          <Route path='/' element={<Home/>}/>
+          <Route path='/empresa' element={<Empresa/>}/>
+          <Route path='/Contato' element={<Contato/>}/>
+          <Route path='*' element={<h1>Rota não encontrada!</h1>} />
         </Routes>
+        <Footer/>
     </Router>
 
   )
 }
-export default App;
+
