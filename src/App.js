@@ -1,12 +1,10 @@
-// import './App.css';
-import {BrowserRouter as Router, Switch, Route, Link} from 'react-router-dom'
+
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
 import Home from './pages/Home';
 import Empresa from './pages/Empresa';
 import Contato from './pages/Contato';
- 
-function App() {
 
-  
+function App() {
   return (
     <Router>
       <ul>
@@ -14,18 +12,16 @@ function App() {
         <li><Link to="/empresa">Empresa</Link></li>
         <li><Link to="/contato">Contato</Link></li>
       </ul>
-        <Switch>
-          <Route exact path='/'>
-            <Home/>
+        <Routes>
+          <Route  path='/' component={Home}>
           </Route>
-          <Route exact path='/empresa'>
-            <Empresa/>
+          <Route  path='/empresa' component={Empresa}>
           </Route>
-          <Route exact path='/Contato'>
-            <Contato/>
+          <Route exact path='/Contato' component={Contato}>
           </Route>
-      </Switch>
+        </Routes>
     </Router>
+
   )
 }
 export default App;
